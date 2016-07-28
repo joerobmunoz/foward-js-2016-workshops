@@ -1,0 +1,55 @@
+Parallel vs Async
+    - Concurrency models
+
+
+"New baseline for JS competency is understanding Generators/Coroutines, not callbacks."
+
+"CSP - communicating sequenctial proecesses"
+    - GO/Clojure/ClojureScript models concurrency through CSP
+
+
+
+Parallel vs. Async:
+    - parallelism: monitored in threads
+        - CPU bound tasks
+    - async: single thread
+        - IO bound tasks, long running tasks
+
+Concurrency:
+    - 2 or more tasks are happening in the same period of time (higher level)
+    - scheduling
+        - interleaving
+    - "whoever is ready next can go" - queue
+    - challenge: temporal dependency
+
+Callback:
+    - "call back into my program and CONTINUE executing", resume execution. Leads into generators.
+    - "file output example (order)"
+        - requires state tracking
+
+    - Inversion of control 
+        - Martin Fowler
+        - Inversion of Control calls your code, not the other way around
+
+    - Two problems:
+        - Trust
+            - to solve this, we need a repeatable pattern for managing callbacks
+        - Not reasonable
+            - hard coded temporal dependency
+                - to express that '2' depends on '1', you had to hard code (compose) '2' _inside_ of '1'.
+
+Sync-Looking Async code
+
+
+Thunks:
+    - A function that has in it everything it needs to get it's job done, all it needs is to be called.
+
+    - Lazy vs. Eager
+    - Time independent function wrapping
+        - Care for each case
+            - execution returning first
+            - or callback firing first
+            - Save both cases to local variables and fire in conditionals
+
+Promises:
+    - 
