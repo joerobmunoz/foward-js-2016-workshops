@@ -1,0 +1,129 @@
+Redux Middleware:
+
+- generic
+
+
+
+Three states of async:
+- pending state
+- fullfilled
+- rejected
+
+
+Thunk middleware:
+- Normally, in redux: actions are objects
+- redux-thunk: recommended way in documentation
+- thunks: -> use functions, instead of objects
+
+    pros:
+        - simple abstraction
+    cons:
+        - not FSA compliant
+        - doesn't explicitly handle 3 different states (only fullfilled)
+
+Promise middleware:
+- dispatch promises instead of thunks
+- pburtchaell/redux-promise-middleware (maintained)
+- promises are built in
+
+RxJs:
+- Function Reactive Programming (FRP)
+- DSL is huge
+- Doesn't "feel" like JavaScript. Huge API
+- Don't use it with redux
+
+Redux-Saga:
+- based on generators
+- Saga Pattern
+    - Failure management. Forward recovery states, backward recovery states, etc.
+- Views, Stores, Sagas
+
+CSP Channels:
+    - ?
+
+
+
+REFRESHER
+---------
+
+Redux Parts:
+- Have one store. Single source of truth
+- Have a "payload: { updateObject... }" api for your actions
+
+
+The hard way:
+- Have a central location for your constants (e.g. Action names)
+- Looks like we're doing folder structure correctly
+- place component test in component directory (sibling)
+- Imports without "../../.."
+- use 'jsx' when you have xml type code in your javascript
+
+
+REPO UPDATES:
+    sockjs-client
+    url-parse
+    requires-port
+    debug
+    querystringify
+    ms
+    inherits
+    json3
+    strip-ansi
+    ansi-regex
+
+
+REDUX MIDDLERWARE
+-----------------
+- 80/20
+- intercept or handle actions before they reach the store
+    - websocket recording, etc.
+        - emit messages that come through to a web socket
+    - logger
+- uses composition and currying
+
+
+Currying:
+    - funcitonal programming
+    - partially apply arguments to a function (returns function)
+
+
+(ALL SLIDES UP ON SPEAKERDECK (freddy rangel))
+- 'process.env.NODE_ENV': JSON.stringify('production')
+     -make sure it's bundled as 
+
+
+
+ASYNC WITH THUNKS AND PROMISES
+------------------------------
+Thunk: a function that wraps an expression to delay it's evaluation
+    - like lazy<T> in c#
+
+- middleware
+- cons: dependency injection is iffy (injecting mocks)
+- FSA (Flux Standard Action): standards for a flux action. Thunks aren't compliant.
+
+
+Promise middleware:
+    - built into the language and built for async
+
+
+The 80/20 Guide to ES2015 Generators   - Book
+    - What do generators transpile down to in Babel?
+    - co routines
+
+
+GENERATORS
+----------
+
+- Functions that can be exited and later re-entered
+- 2 parts: generator function, generator object
+    - object only has next()
+
+- fibonacciGenerator example
+- yield/next/done/value
+- setInterval 0, to stop blocking event loop
+
+
+REDUX SAGA
+----------
+- yield* :  yields a generator
