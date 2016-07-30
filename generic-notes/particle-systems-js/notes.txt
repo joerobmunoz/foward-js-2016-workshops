@@ -1,0 +1,15 @@
+using canvas, etc. rendering targets
+
+
+"git co ..."
+
+webpack config to deploy mainjs entrypoint
+
+vigilant-octo-robot
+
+
+particle OOP is robust for 60fps
+
+JS profling
+    - looking for DOM GC and other GC collections
+    - GPU usage

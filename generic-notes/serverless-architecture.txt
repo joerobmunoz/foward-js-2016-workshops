@@ -1,0 +1,44 @@
+google trends search "serverless architecture"
+    - replacing microservices buzzword
+
+referring to 2 different things:
+    1. API driven development
+        - plug and play 3rd party APIs
+
+    2. Functions as a service
+        - small code module that's dropped into AWS lambda
+        - atomic
+
+
+migration evaluation:
+    - redeploy/version modular pieces of your code without reversioning the entire code base
+    - microservices downside
+        - tons of deploys? Reliability
+
+
+stateless pieces of code that get spun up and spun down
+
+hype machine example (mongo)
+    - didn't voice the drawbacks loud enough
+    - "heisenbug"?
+
+
+two hard problems in computer science:
+    - naming
+    - cache invalidation
+    - off-by-one errors
+
+
+latency issues:
+    - solved by caching (every time)
+    - investigate a local vs. a remote cache
+
+    " if you think you're going to need to cache anything between requests, you probably shouldn't use lambda"
+
+serverless, struggles with performance
+
+"microservices IS ready for performant systems or real-time systems"
+    - Questions:
+        - how do you approach performance and caching in microservices?
+        - "chaining requests" problem in serverless architecture, how is it solved in microservices?
+
