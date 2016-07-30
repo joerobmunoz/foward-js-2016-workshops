@@ -33,4 +33,14 @@ function getFile(file) {
 // but only once previous rendering
 // is done.
 
-// ???
+['file1', 'file2', 'file3'].map(function(c) {
+	return getFile(c);
+}).concat('Complete!')
+.reduce(function(acc, c) {
+	return acc.then(output)
+		.then(function() {
+			return c;
+		})
+}).then(function(text) {
+	output(text);
+});

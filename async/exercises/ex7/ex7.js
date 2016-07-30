@@ -33,3 +33,16 @@ function getFile(file) {
 // is done.
 
 // ???
+
+ASQ().runner(function main*() {
+	var p1 = getFile("file1")
+	var p2 = getFile("file2")
+	var p3 = getFile("file3")
+
+	output(yield p1)
+	output(yield p1)
+	output(yield p1)
+}).
+val(function() {
+	output("Complete!")
+});

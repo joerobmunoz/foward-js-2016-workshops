@@ -41,11 +41,9 @@ function getFile(file) {
 // request all files at once in "parallel"
 // ???
 
-
 var th1 = getFile('file1');
 var th2 = getFile('file2');
 var th3 = getFile('file3');
-
 
 // We don't want to think about 'time', so encapsulate it in thunks
 th1(function(text1) {

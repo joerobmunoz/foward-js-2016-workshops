@@ -52,4 +52,51 @@ Thunks:
             - Save both cases to local variables and fire in conditionals
 
 Promises:
-    - 
+    - Future value (cheeseburger example)
+    - designed to address trust issues with callbacks
+    - Don't misuse
+        - Does it model an action in a time independent way?
+
+
+    - Promise.race([
+        // Takes the first result. Can pit 2 promises against eachother (like a real promise vs. a timeout reject() )
+    ])
+    - Getify native-promise-only is a spec compliant polyfill
+
+Coroutine:
+    - helper function that he added to wrap a generator (calling next)
+
+
+
+Generators + Promises:
+    - GenRunner pattern
+
+    - Yield a promise -> Resume with .next() -> yield a promise -> resume with .next()
+
+Future stuff:
+    - http://rxmarbles.com/
+    - Reactive Programming
+        - Observables
+
+
+Concurrency (+ Channels):
+    - stream of communication, only a single piece of data in it
+    - CSP, a la Go. Communicating Sequential Processes
+
+    - Backpressure:
+        - signal to say "stop sending information"
+        - signal to say "start"
+        - Built into CSP channels
+
+    - Put/Take operations
+        - Inserts/Removes from channels (that can only have a single datum)
+        - Control transfer
+            - ping pong example
+
+
+    - ClojureScript uses CSP
+        - ClojureScript compiles to JS
+        - OM framework
+            - uses React as the render engine
+            - uses OM framework for data management
+                - transducers
